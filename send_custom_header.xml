@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade">
+	<name>Send Custom Header</name>
+	<author>B Tasker</author>
+	<creationDate>August 2013</creationDate>
+	<copyright>Copyright (C) 2013 - B Tasker</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>custlibrary@bentasker.co.uk</authorEmail>
+	<authorUrl>www.bentasker.co.uk</authorUrl>
+	<version>1.0.1</version>
+	<description>Plugin to allow sending of a custom HTTP header if certain conditions are met</description>
+	<files>
+		<filename plugin="send_custom_header">send_custom_header.php</filename>
+	</files>
+	
+	<config>
+	  <fields name="params">
+		<fieldset name="basic">
+	  
+		  <field name="sendWhen" type="list" label="Send When" default="1">
+		    <option value="1">User Logged In</option>
+		    <option value="0">User Not Logged In</option>
+		  </field>
+		  
+		  <field name="headerName" type="text" label="Header Name" default="X-DONT-CACHE-ME" />
+		  <field name="headerContent" type="text" label="Header Content" default="True" />
+		  
+		  <field name="runonAdmin" type="list" label="Run on" default="2" >
+		    <option value="0">Front-End Only</option>
+		    <option value="1">Back-End Only</option>
+		    <option value="2">Front and Back-End</option>
+		  </field>
+		  
+		  
+		</fieldset>
+	  </fields>
+	</config>
+
+	
+</extension>
