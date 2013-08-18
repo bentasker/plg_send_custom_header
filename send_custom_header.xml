@@ -17,22 +17,50 @@
 	  <fields name="params">
 		<fieldset name="basic">
 	  
-		  <field name="sendWhen" type="list" label="Send When" default="1">
-		    <option value="1">User Logged In</option>
-		    <option value="0">User Not Logged In</option>
+		
+		 
+		  <field name="headerName" type="textarea" label="Headers" description="Comma Seperated Key value pairs for headers to send" default="X-DONT-CACHE-ME=no-cache" />
+		  <!--<field name="headerContent" type="text" label="Header Content" default="True" />-->
+		  <field name="cookieVals" type="textarea" label="Cookies" description="Comma Seperated Key value pairs for cookies to set" default="JNoCache=True" />
+
+		  <field name="debugMode" type="list" label="Debug Mode" description="When enabled adds headers so you can see how the rules have been applied" >
+		    <option value="0">Off</option>
+		    <option value="1">On</option>
 		  </field>
 		  
-		  <field name="headerName" type="text" label="Header Name" default="X-DONT-CACHE-ME" />
-		  <field name="headerContent" type="text" label="Header Content" default="True" />
+		</fieldset>
+		
+		<fieldset name="rules">
+		
+		  <field name="runonSSL" type="list" label="SSL Connections" default="2" description="How should SSL Connections be handled?">
 		  
-		  <field name="runonAdmin" type="list" label="Run on" default="2" >
+		    <option value="0">Never Run</option>
+		    <option value="1">Always Run</option>
+		    <option value="2">Obey Rules</option>
+		  
+		  </field>
+		
+		  <field name="runonAdmin" type="list" label="Run on" default="2" description="Can be overriden in Inclusion settings">
 		    <option value="0">Front-End Only</option>
 		    <option value="1">Back-End Only</option>
 		    <option value="2">Front and Back-End</option>
+		  </field>		
+		
+		  <field name="sendWhen" type="list" label="Send When" default="1" description="Can be overriden in Inclusion settings">
+		    <option value="1">User Logged In</option>
+		    <option value="0">User Not Logged In</option>
 		  </field>
-		  
-		  
+		
 		</fieldset>
+		
+		
+		<fieldset name="Inclusion/Exclusion Settings">
+		  <field type="textarea" name="alwaysRun" label="Always run on" description="Always trigger in these components - Comma Seperated Component Names" default="com_users" />
+		  <field type="textarea" name="neverRun" label="Never run on" description="Never trigger in these components - Comma Seperated Component Names" default="" />
+		  <field type="textarea" name="alwaysURL" label="Always on URLs" description="Always run on these (relative) URLs - Comma Seperated" default="/administrator/,/administrator,/administrator/index.php" />
+		  <field type="textarea" name="neverURL" label="Never on URLs" description="Never run on these (relative) URLs - Comma Seperated" default="" />
+		</fieldset>
+		
 	  </fields>
 	</config>
 
