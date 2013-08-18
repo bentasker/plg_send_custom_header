@@ -30,7 +30,7 @@
 		  
 		</fieldset>
 		
-		<fieldset name="rules">
+		<fieldset name="rules" label="Rules">
 		
 		  <field name="runonSSL" type="list" label="SSL Connections" default="2" description="How should SSL Connections be handled?">
 		  
@@ -54,7 +54,7 @@
 		</fieldset>
 		
 		
-		<fieldset name="Inclusion/Exclusion Settings">
+		<fieldset name="InclusionExclusion" label="Inclusion/Exclusion Settings">
 		  <field type="textarea" name="alwaysRun" label="Always run on" description="Always trigger in these components - Comma Seperated Component Names" default="com_users" />
 		  <field type="textarea" name="neverRun" label="Never run on" description="Never trigger in these components - Comma Seperated Component Names" default="" />
 		  <field type="textarea" name="alwaysURL" label="Always on URLs" description="Always run on these (relative) URLs - Comma Seperated" default="/administrator/,/administrator,/administrator/index.php" />
