@@ -117,7 +117,7 @@ class plgSystemsend_custom_header extends JPlugin
 
 	      // Process the never rules (including back-end/front-end disablement)
 	      if (($isAdmin && $runon == '0') || (!$isAdmin && $runon == '1') || in_array($currenturl,$neverURL) || in_array($currentcomp,$neverComp)){
-			$this->debug['Never-Rule-Applies-On-SSL'] = 'True';
+			$this->debug['Never-Rule-Applies'] = 'True';
 			return false;	    
 	      }
 
